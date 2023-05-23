@@ -1,7 +1,7 @@
 package com.elisis.anpmr.chemistry;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 
 import com.elisis.anpmr.util.Pair;
 
@@ -10,7 +10,7 @@ public class Compound {
 	private String name;
 	
 	private float molarMass;
-	private LinkedList<PairCompoundPart<Integer>> composition;
+	private ArrayList<PairCompoundPart<Integer>> composition;
 	
 	protected Compound(CompoundBuilder builder) {
 		this.name = builder.name;
@@ -21,7 +21,7 @@ public class Compound {
 		private String name;
 		
 		private float molarMass;
-		private LinkedList<PairCompoundPart<Integer>> composition;
+		private ArrayList<PairCompoundPart<Integer>> composition;
 		
 		public CompoundBuilder(String name) {
 			this.name = name;
@@ -29,8 +29,8 @@ public class Compound {
 		
 		public CompoundBuilder withParts(PairCompoundPart<Integer>... parts) {
 			
-			LinkedList<CompoundPart> compoundParts = PairCompoundPart.getCompoundPartFromList(Arrays.<Pair<CompoundPart, Integer>>asList(parts));
-			LinkedList<Integer> compoundMoles = PairCompoundPart.getVFromList(Arrays.<Pair<CompoundPart, Integer>>asList(parts));
+			ArrayList<CompoundPart> compoundParts = PairCompoundPart.getCompoundPartFromList(Arrays.<Pair<CompoundPart, Integer>>asList(parts));
+			ArrayList<Integer> compoundMoles = PairCompoundPart.getVFromList(Arrays.<Pair<CompoundPart, Integer>>asList(parts));
 			
 			float totalMass = 0;
 			

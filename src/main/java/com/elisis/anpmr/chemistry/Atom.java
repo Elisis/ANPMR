@@ -1,6 +1,5 @@
 package com.elisis.anpmr.chemistry;
 
-import com.elisis.anpmr.util.Pair;
 import com.elisis.anpmr.util.PairableFloat;
 
 public class Atom implements PairableFloat {
