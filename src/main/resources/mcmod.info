@@ -1,0 +1,16 @@
+[
+{
+  "modid": "anpmr",
+  "name": "ANPM:R",
+  "description": "Morem mipsum molor mit mamet.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Elisis"],
+  "credits": "^.^",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
