@@ -1,6 +1,6 @@
 package com.elisis.anpmr.chemistry;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.elisis.anpmr.util.Pair;
@@ -19,11 +19,11 @@ public class PairElement<V> extends Pair<Element, V> {
 		return this.getU();
 	}
 	
-	public static <M> LinkedList<Element> getElementFromList(List<Pair<Element, M>> list) {
+	public static <M> ArrayList<Element> getElementFromList(List<Pair<Element, M>> list) {
 		return PairElement.<Element, M>getTFromList(list);
 	}
 	
-	public static <M> LinkedList<M> getVFromList(List<Pair<Element, M>> list) {
+	public static <M> ArrayList<M> getVFromList(List<Pair<Element, M>> list) {
 		return getUFromList(list);
 	}
 

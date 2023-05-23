@@ -1,7 +1,7 @@
 package com.elisis.anpmr.chemistry;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 
 import com.elisis.anpmr.util.PairableFloat;
 import com.elisis.anpmr.util.PairableInt;
@@ -15,7 +15,7 @@ public class Element implements PairableInt, PairableFloat {
 	private float atomicMass;
 	
 	// Isotope, Proportion
-	private LinkedList<PairAtom<Float>> isotopes;
+	private ArrayList<PairAtom<Float>> isotopes;
 	private Atom primaryIsotope;
 	
 	public Element(String name, int atomicNumber) {

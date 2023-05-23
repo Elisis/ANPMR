@@ -1,11 +1,9 @@
 package com.elisis.anpmr.util;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Pair<T, U> {
-
-	protected Pair instance;
 	
 	private T t;
 	private U u;
@@ -23,8 +21,8 @@ public abstract class Pair<T, U> {
 		return this.u;
 	}
 	
-	public static <L, M> LinkedList<L> getTFromList(List<Pair<L, M>> list) {
-		LinkedList<L> listT = new LinkedList<>();
+	public static <L, M> ArrayList<L> getTFromList(List<Pair<L, M>> list) {
+		ArrayList<L> listT = new ArrayList<>();
 		
 		for (Pair<L, M> pair : list) {
 			
@@ -35,8 +33,8 @@ public abstract class Pair<T, U> {
 		return listT;
 	}
 	
-	public static <L, M> LinkedList<M> getUFromList(List<Pair<L, M>> list) {
-		LinkedList<M> listU = new LinkedList<>();
+	public static <L, M> ArrayList<M> getUFromList(List<Pair<L, M>> list) {
+		ArrayList<M> listU = new ArrayList<>();
 		
 		for (Pair<L, M> pair : list) {
 			

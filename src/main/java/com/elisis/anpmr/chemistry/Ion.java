@@ -1,15 +1,13 @@
 package com.elisis.anpmr.chemistry;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Ion extends CompoundPart {
 
 	private String name;
 	private int totalCharge;
 	
-	private LinkedList<PairElement<Integer>> elements;
+	private ArrayList<PairElement<Integer>> elements;
 	
 	public Ion(IonBuilder builder) {
 		this.name = builder.name;
@@ -24,7 +22,7 @@ public class Ion extends CompoundPart {
 		private String name = "NULL";
 		private int totalCharge = 0;
 		
-		private LinkedList<PairElement<Integer>> elements;
+		private ArrayList<PairElement<Integer>> elements;
 		
 		public Ion build() {
 			return new Ion(this);
