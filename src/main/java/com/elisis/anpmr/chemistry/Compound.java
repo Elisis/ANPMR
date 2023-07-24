@@ -2,10 +2,16 @@ package com.elisis.anpmr.chemistry;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
+import com.elisis.anpmr.chemistry.pair.PairCompound;
+import com.elisis.anpmr.chemistry.pair.PairCompoundPart;
 import com.elisis.anpmr.util.Pair;
+import com.elisis.anpmr.util.PairableFloat;
 
-public class Compound {
+public class Compound implements PairableFloat {
+	
+	public static HashMap<String, Compound> compoundList = new HashMap<>();
 	
 	private String name;
 	
@@ -16,7 +22,11 @@ public class Compound {
 		this.name = builder.name;
 	}
 	
-	public final class CompoundBuilder {
+	public String getName() {
+		return this.name;
+	}
+	
+	public static class CompoundBuilder {
 		
 		private String name;
 		
@@ -27,7 +37,13 @@ public class Compound {
 			this.name = name;
 		}
 		
-		public CompoundBuilder withParts(PairCompoundPart<Integer>... parts) {
+		@SafeVarargs
+		/***
+		 * 
+		 * @param parts - Pair<> of CompoundParts and molar quantites
+		 * @return Builder object
+		 */
+		public final CompoundBuilder withParts(PairCompoundPart<Integer>... parts) {
 			
 			ArrayList<CompoundPart> compoundParts = PairCompoundPart.getCompoundPartFromList(Arrays.<Pair<CompoundPart, Integer>>asList(parts));
 			ArrayList<Integer> compoundMoles = PairCompoundPart.getVFromList(Arrays.<Pair<CompoundPart, Integer>>asList(parts));
@@ -45,9 +61,18 @@ public class Compound {
 		
 		
 		public Compound build() {
-			return new Compound(this);
+			
+			Compound compound = new Compound(this);
+			compoundList.put(compound.getName(), compound);
+			
+			return compound;
 		}
 		
+	}
+
+	@Override
+	public Pair<? extends PairableFloat, Float> with(float floatObj) {
+		return new PairCompound<Float>(this, floatObj);
 	}
 
 }

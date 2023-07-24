@@ -1,8 +1,9 @@
-package com.elisis.anpmr.chemistry;
+package com.elisis.anpmr.chemistry.pair;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.elisis.anpmr.chemistry.CompoundPart;
 import com.elisis.anpmr.util.Pair;
 
 public class PairCompoundPart<V> extends Pair<CompoundPart, V> {
@@ -15,7 +16,7 @@ public class PairCompoundPart<V> extends Pair<CompoundPart, V> {
 		return this.getT();
 	}
 	
-	protected V getObj() {
+	public V getObj() {
 		return this.getU();
 	}
 	

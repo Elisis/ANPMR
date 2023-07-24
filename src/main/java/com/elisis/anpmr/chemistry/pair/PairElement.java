@@ -1,8 +1,9 @@
-package com.elisis.anpmr.chemistry;
+package com.elisis.anpmr.chemistry.pair;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.elisis.anpmr.chemistry.Element;
 import com.elisis.anpmr.util.Pair;
 
 public class PairElement<V> extends Pair<Element, V> {
@@ -15,12 +16,12 @@ public class PairElement<V> extends Pair<Element, V> {
 		return this.getT();
 	}
 	
-	protected V getObj() {
+	public V getObj() {
 		return this.getU();
 	}
 	
 	public static <M> ArrayList<Element> getElementFromList(List<Pair<Element, M>> list) {
-		return PairElement.<Element, M>getTFromList(list);
+		return getTFromList(list);
 	}
 	
 	public static <M> ArrayList<M> getVFromList(List<Pair<Element, M>> list) {

@@ -2,6 +2,8 @@ package com.elisis.anpmr.chemistry;
 
 import java.util.ArrayList;
 
+import com.elisis.anpmr.chemistry.pair.PairElement;
+
 public class Ion extends CompoundPart {
 
 	private String name;
@@ -30,6 +32,11 @@ public class Ion extends CompoundPart {
 		
 		
 		@SafeVarargs
+		/***
+		 * 
+		 * @param elements - Pair<> of elements and number of moles for each
+		 * @return IonBuilder object
+		 */
 		public final IonBuilder withElements(PairElement<Integer>... elements) {
 			
 			float totalMass = 0;

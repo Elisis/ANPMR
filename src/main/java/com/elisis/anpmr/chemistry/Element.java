@@ -3,6 +3,8 @@ package com.elisis.anpmr.chemistry;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.elisis.anpmr.chemistry.pair.PairAtom;
+import com.elisis.anpmr.chemistry.pair.PairElement;
 import com.elisis.anpmr.util.PairableFloat;
 import com.elisis.anpmr.util.PairableInt;
 

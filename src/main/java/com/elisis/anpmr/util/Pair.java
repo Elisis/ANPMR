@@ -21,7 +21,7 @@ public abstract class Pair<T, U> {
 		return this.u;
 	}
 	
-	public static <L, M> ArrayList<L> getTFromList(List<Pair<L, M>> list) {
+	protected static <L, M> ArrayList<L> getTFromList(List<Pair<L, M>> list) {
 		ArrayList<L> listT = new ArrayList<>();
 		
 		for (Pair<L, M> pair : list) {
@@ -33,7 +33,7 @@ public abstract class Pair<T, U> {
 		return listT;
 	}
 	
-	public static <L, M> ArrayList<M> getUFromList(List<Pair<L, M>> list) {
+	protected static <L, M> ArrayList<M> getUFromList(List<Pair<L, M>> list) {
 		ArrayList<M> listU = new ArrayList<>();
 		
 		for (Pair<L, M> pair : list) {

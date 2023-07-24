@@ -1,15 +1,16 @@
 package com.elisis.anpmr.chemistry;
 
-import com.elisis.anpmr.util.PairableFloat;
+import com.elisis.anpmr.chemistry.pair.PairCompoundPart;
+import com.elisis.anpmr.util.PairableInt;
 
-public abstract class CompoundPart implements PairableFloat {
+public abstract class CompoundPart implements PairableInt {
 	
 	protected float mass;
 	
 	@Override
-	public PairCompoundPart<Float> with(float floatObj) {
+	public PairCompoundPart<Integer> with(int intObj) {
 
-		return new PairCompoundPart<Float>(this, floatObj);	
+		return new PairCompoundPart<Integer>(this, intObj);	
 		
 	}
 	

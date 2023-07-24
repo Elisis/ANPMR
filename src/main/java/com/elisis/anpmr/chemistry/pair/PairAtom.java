@@ -1,5 +1,6 @@
-package com.elisis.anpmr.chemistry;
+package com.elisis.anpmr.chemistry.pair;
 
+import com.elisis.anpmr.chemistry.Atom;
 import com.elisis.anpmr.util.Pair;
 
 public class PairAtom<V> extends Pair<Atom, V> {
@@ -13,7 +14,7 @@ public class PairAtom<V> extends Pair<Atom, V> {
 		return this.getT();
 	}
 	
-	protected V getObj() {
+	public V getObj() {
 		return this.getU();
 	}
 }
