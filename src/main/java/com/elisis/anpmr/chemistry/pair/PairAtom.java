@@ -1,7 +1,7 @@
 package com.elisis.anpmr.chemistry.pair;
 
 import com.elisis.anpmr.chemistry.Atom;
-import com.elisis.anpmr.util.Pair;
+import com.elisis.anpmr.util.pair.Pair;
 
 public class PairAtom<V> extends Pair<Atom, V> {
 

@@ -1,7 +1,7 @@
 package com.elisis.anpmr.chemistry;
 
 import com.elisis.anpmr.chemistry.pair.PairCompoundPart;
-import com.elisis.anpmr.util.PairableInt;
+import com.elisis.anpmr.util.pair.PairableInt;
 
 public abstract class CompoundPart implements PairableInt {
 	

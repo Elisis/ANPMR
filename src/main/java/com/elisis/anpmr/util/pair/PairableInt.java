@@ -1,4 +1,4 @@
-package com.elisis.anpmr.util;
+package com.elisis.anpmr.util.pair;
 
 public interface PairableInt {
 

@@ -6,8 +6,8 @@ import java.util.HashMap;
 
 import com.elisis.anpmr.chemistry.pair.PairCompound;
 import com.elisis.anpmr.chemistry.pair.PairCompoundPart;
-import com.elisis.anpmr.util.Pair;
-import com.elisis.anpmr.util.PairableFloat;
+import com.elisis.anpmr.util.pair.Pair;
+import com.elisis.anpmr.util.pair.PairableFloat;
 
 public class Compound implements PairableFloat {
 	
@@ -45,8 +45,8 @@ public class Compound implements PairableFloat {
 		 */
 		public final CompoundBuilder withParts(PairCompoundPart<Integer>... parts) {
 			
-			ArrayList<CompoundPart> compoundParts = PairCompoundPart.getCompoundPartFromList(Arrays.<Pair<CompoundPart, Integer>>asList(parts));
-			ArrayList<Integer> compoundMoles = PairCompoundPart.getVFromList(Arrays.<Pair<CompoundPart, Integer>>asList(parts));
+			ArrayList<CompoundPart> compoundParts = PairCompoundPart.getCompoundPartFromList(Arrays.asList(parts));
+			ArrayList<Integer> compoundMoles = PairCompoundPart.getVFromList(Arrays.asList(parts));
 			
 			float totalMass = 0;
 			

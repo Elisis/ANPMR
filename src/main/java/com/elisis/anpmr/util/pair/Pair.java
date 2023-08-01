@@ -1,4 +1,4 @@
-package com.elisis.anpmr.util;
+package com.elisis.anpmr.util.pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public abstract class Pair<T, U> {
 		return this.u;
 	}
 	
-	protected static <L, M> ArrayList<L> getTFromList(List<Pair<L, M>> list) {
+	protected static <L, M> ArrayList<L> getTFromList(List<? extends Pair<L, M>> list) {
 		ArrayList<L> listT = new ArrayList<>();
 		
 		for (Pair<L, M> pair : list) {
@@ -33,7 +33,7 @@ public abstract class Pair<T, U> {
 		return listT;
 	}
 	
-	protected static <L, M> ArrayList<M> getUFromList(List<Pair<L, M>> list) {
+	protected static <L, M> ArrayList<M> getUFromList(List<? extends Pair<L, M>> list) {
 		ArrayList<M> listU = new ArrayList<>();
 		
 		for (Pair<L, M> pair : list) {

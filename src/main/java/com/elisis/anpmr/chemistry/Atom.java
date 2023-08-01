@@ -1,9 +1,9 @@
 package com.elisis.anpmr.chemistry;
 
 import com.elisis.anpmr.chemistry.pair.PairAtom;
-import com.elisis.anpmr.util.PairableFloat;
+import com.elisis.anpmr.util.pair.PairableDouble;
 
-public class Atom implements PairableFloat {
+public class Atom implements PairableDouble {
 	
 	
 
@@ -15,12 +15,15 @@ public class Atom implements PairableFloat {
 	
 	private float halfLife;
 	
+	private String otherName = ""; //Alternative name, instead of, say, Hydrogen-2
+	
 	public Atom(AtomBuilder builder) {
 		
 		this.atomicNumber = builder.atomicNumber;
 		this.neutronNumber = builder.neutronNumber;
 		this.atomicMass = builder.atomicMass;
 		this.halfLife = builder.halfLife;
+		this.otherName = builder.otherName;
 	
 	}
 	
@@ -36,10 +39,17 @@ public class Atom implements PairableFloat {
 		private int neutronNumber;
 		private float atomicMass;
 		
+		private String otherName = "";
+		
 		private float halfLife;
 		
 		public AtomBuilder(int atomicNumber) {
 			this.atomicNumber = atomicNumber;
+		}
+		
+		public AtomBuilder(int atomicNumber, String otherName) {
+			this(atomicNumber);
+			this.otherName = otherName;
 		}
 		
 		
@@ -61,8 +71,8 @@ public class Atom implements PairableFloat {
 
 
 	@Override
-	public PairAtom<Float> with(float floatObj) {
-		return new PairAtom<Float>(this, floatObj);
+	public PairAtom<Double> with(double d) {
+		return new PairAtom<Double>(this, d);
 	}
 	
 	

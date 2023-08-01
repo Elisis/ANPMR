@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.elisis.anpmr.chemistry.CompoundPart;
-import com.elisis.anpmr.util.Pair;
+import com.elisis.anpmr.util.pair.Pair;
 
 public class PairCompoundPart<V> extends Pair<CompoundPart, V> {
 	
@@ -20,11 +20,11 @@ public class PairCompoundPart<V> extends Pair<CompoundPart, V> {
 		return this.getU();
 	}
 	
-	public static <L> ArrayList<CompoundPart> getCompoundPartFromList(List<Pair<CompoundPart, L>> list) {
+	public static <L> ArrayList<CompoundPart> getCompoundPartFromList(List<PairCompoundPart<L>> list) {
 		return getTFromList(list);
 	}
 	
-	public static <L> ArrayList<L> getVFromList(List<Pair<CompoundPart, L>> list) {
+	public static <L> ArrayList<L> getVFromList(List<PairCompoundPart<L>> list) {
 		return getUFromList(list);
 	}
 }

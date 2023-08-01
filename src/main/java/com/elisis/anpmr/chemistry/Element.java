@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 import com.elisis.anpmr.chemistry.pair.PairAtom;
 import com.elisis.anpmr.chemistry.pair.PairElement;
-import com.elisis.anpmr.util.PairableFloat;
-import com.elisis.anpmr.util.PairableInt;
+import com.elisis.anpmr.util.pair.PairableFloat;
+import com.elisis.anpmr.util.pair.PairableInt;
 
 public class Element implements PairableInt, PairableFloat {
 
@@ -17,7 +17,7 @@ public class Element implements PairableInt, PairableFloat {
 	private float atomicMass;
 	
 	// Isotope, Proportion
-	private ArrayList<PairAtom<Float>> isotopes;
+	private ArrayList<PairAtom<Double>> isotopes;
 	private Atom primaryIsotope;
 	
 	public Element(String name, int atomicNumber) {
@@ -27,13 +27,13 @@ public class Element implements PairableInt, PairableFloat {
 	
 	
 	@SafeVarargs
-	public final Element withIsotopes(PairAtom<Float>... isotopes) {
+	public final Element withIsotopes(PairAtom<Double>... isotopes) {
 		
-		this.isotopes.addAll(Arrays.<PairAtom<Float>>asList(isotopes));
+		this.isotopes.addAll(Arrays.<PairAtom<Double>>asList(isotopes));
 		
 		float weightedMass = 0;
 		
-		for (PairAtom<Float> atomPair : isotopes) {
+		for (PairAtom<Double> atomPair : isotopes) {
 			weightedMass += atomPair.getObj() * atomPair.getAtom().getAtomicMass();
 		}
 		
@@ -52,6 +52,9 @@ public class Element implements PairableInt, PairableFloat {
 		return this.atomicMass;
 	}
 	
+	public int getAtomicNumber() {
+		return this.atomicNumber;
+	}
 	
 	/*
 	 * Pair stuff
