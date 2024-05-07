@@ -16,7 +16,7 @@ public class PairCompound<V> extends Pair<Compound, V> {
 		return this.getT();
 	}
 	
-	public V getV() {
+	public V getObj() {
 		return this.getU();
 	}
 	

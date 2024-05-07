@@ -27,7 +27,7 @@ public class MetaItem extends BaseItem {
 	public String getUnlocalisedName(ItemStack stack) {
 		int meta = stack.getMetadata();
 		Material mat = this.metaMaterialMap.get(meta);
-		String matName =
+		//String matName =
 	}
 	
 }

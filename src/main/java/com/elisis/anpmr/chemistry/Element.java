@@ -16,13 +16,16 @@ public class Element implements PairableInt, PairableFloat {
 	
 	private float atomicMass;
 	
+	private String chemicalSymbol;
+	
 	// Isotope, Proportion
 	private ArrayList<PairAtom<Double>> isotopes;
 	private Atom primaryIsotope;
 	
-	public Element(String name, int atomicNumber) {
+	public Element(String name, int atomicNumber, String chemicalSymbol) {
 		this.name = name;
 		this.atomicNumber = atomicNumber;
+		this.chemicalSymbol = chemicalSymbol;
 	}
 	
 	
@@ -54,6 +57,10 @@ public class Element implements PairableInt, PairableFloat {
 	
 	public int getAtomicNumber() {
 		return this.atomicNumber;
+	}
+	
+	public String getSymbol() {
+		return this.chemicalSymbol;
 	}
 	
 	/*

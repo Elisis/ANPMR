@@ -7,6 +7,7 @@ import com.elisis.anpmr.chemistry.pair.PairElement;
 public class Ion extends CompoundPart {
 
 	private String name;
+	private String formula;
 	private int totalCharge;
 	
 	private ArrayList<PairElement<Integer>> elements;
@@ -16,17 +17,47 @@ public class Ion extends CompoundPart {
 		this.totalCharge = builder.totalCharge;
 		this.elements = builder.elements;
 		this.mass = builder.mass;
+		this.formula = builder.formula;
 	}
 	
 	public static class IonBuilder {
 		
 		private float mass;
-		private String name = "NULL";
+		private String name = "";
 		private int totalCharge = 0;
+		
+		private String formula;
 		
 		private ArrayList<PairElement<Integer>> elements;
 		
+		public IonBuilder(String name) {
+			this.name = name;
+		}
+		
+		public IonBuilder() {
+		}
+		
 		public Ion build() {
+			
+			this.formula = "";
+			
+			for (PairElement<Integer> pair : this.elements) {
+				
+				Element element = pair.getElement();
+				int amount = pair.getObj();
+				
+				formula += element.getSymbol() + amount;
+				
+			}
+			
+			formula += this.totalCharge;
+			
+			if ("".equals(this.name)) {
+				
+				this.name = this.formula;				
+				
+			}
+			
 			return new Ion(this);
 		}
 		
@@ -58,5 +89,19 @@ public class Ion extends CompoundPart {
 		}
 		
 		
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
+	
+	public String getFormula() {
+		return this.formula;
+	}
+	
+	@Override
+	public int getCharge() {
+		return this.totalCharge;
 	}
 }

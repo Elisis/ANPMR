@@ -11,13 +11,22 @@ public class AtomLoader {
 	// He
 	public static Atom He4;
 	
+	// Na
+	public static Atom Na23;
 	
 	
-	public static void register() {
+	public static void load() {
+		register();
+	}
+	
+	
+	private static void register() {
 		H1 = new Atom.AtomBuilder(1, "Hydrogen").neutrons(0).build();
 		H2 = new Atom.AtomBuilder(1, "Deuterium").neutrons(1).build();
 		
-		He4 = new Atom.AtomBuilder(2, "Helium").neutrons(2).build();
+		He4 = new Atom.AtomBuilder(2).neutrons(2).build();
+		
+		Na23 = new Atom.AtomBuilder(11).neutrons(12).build();
 		
 		
 	}
